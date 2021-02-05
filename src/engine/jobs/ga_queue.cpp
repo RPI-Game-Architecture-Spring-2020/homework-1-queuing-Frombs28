@@ -17,8 +17,6 @@ ga_queue::ga_queue(int node_count)
 	node->next = NULL;
 	Head = node;
 	Tail = node;
-	//H_lock.unlock();
-	//T_lock.unlock();
 	// For extra credit, preallocate 'node_count' elements (instead of
 	// allocating on push).
 	// See https://www.research.ibm.com/people/m/michael/podc-1996.pdf
@@ -29,7 +27,6 @@ ga_queue::~ga_queue()
 	// TODO:
 	// Free any resources held by the queue.
 	node_t* node = Head;
-	int total = 0;
 	while (node != NULL) {
 		node_t* next_node = node->next;
 		delete node;
